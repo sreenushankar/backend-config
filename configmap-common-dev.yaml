@@ -1,0 +1,72 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wallet-common-config
+  namespace: wallet-be-dev
+data:
+  DB_HOST: zarga-dev-postgres-server01.postgres.database.azure.com
+  DB_PORT: '5432'
+  DB_USER: sqldev@zarga-dev-postgres-server01
+  DB_NAME: postgres
+  DB_SSL_REQUIRED: 'true'
+  DB_DIALECT: postgres
+  LOG_LEVEL: debug
+  DB_POOL_MAX_CONNECTION: '5'
+  DB_POOL_MIN_CONNECTION: '2'
+  DB_LOG_SQL: 'false'
+  
+  NEDBANK_BASE_URL: https://api.nedbank.co.za/apimarket/sandbox/
+  NEDBANK_CLIENT_ID: dffe7782-2b74-47d3-aaab-b98dcdaab674
+  NEDBANK_FINANCIAL_ID: OB/2017/001
+  JWT_SOFT_TOKEN_EXPIRY: 6h
+  OTP_RESEND_INTERVAL_MS: '10000'
+  CALL_SMS_SERVICE: 'Y'
+  SMS_URL: https://rest.smsportal.com/bulkmessages
+  SMS_API_KEY: 73e7517c-d2e5-4e61-8744-7d4e9c8bbf7e
+  FIREBASE_ACCOUNT: /var/secrets/firebase/zarga-payments-platform-firebase-adminsdk-kt3q8-55948ca4fc.json
+  READ_BALANCE_REDIRECT_URI: https://zarga-apim.azure-api.net/callback/api/v1/readbalance
+  W2W_TRANSFER_REDIRECT_URI: https://zarga-apim.azure-api.net/callback/api/v1/sendzarga
+  W2BA_TRANSFER_REDIRECT_URI: https://zarga-apim.azure-api.net/callback/api/v1/banktransfer
+  CREATE_WALLET_REDIRECT_URI: https://zarga-apim.azure-api.net/callback/api/v1/createwallet
+  WITHDRAW_ATM_REDIRECT_URI: https://zarga-apim.azure-api.net/callback/api/v1/withdrawatm
+  RECENT_PAYMENTS_LIMIT: '5'
+
+  NEDBANK_W2W_LOCATION: APIM
+  NEDBANK_TOKEN_CHANNEL: '412'
+  NEDBANK_W2W_CHANNEL: TPP
+  
+  MSG_WALLET_CREATED: Wallet Created
+  MSG_CALLBACK_INVALID: Callback Invalid
+  MSG_INVALID_NEDBANK_RESPONSE: Invalid Nedbank response
+  MSG_INVALID_CONSUMER: Invalid Consumer
+  MSG_INVALID_CONSUMER_LOGIN: Invalid Consumer or Login
+  MSG_INVALID_CONSUMER_TYPE: Invalid Consumer Type
+  MSG_OTP_SENT: OTP sent successfully
+  MSG_EXIST_OTP_ACTIVE: previously sent otp is still active
+  MSG_INVALID_OTP: Invalid OTP
+  MSG_LOGIN_PIN_SET: Login PIN is set
+  MSG_WALLET_NOT_FOUND: Wallet not found
+  MSG_TO_WALLET_NOT_FOUND: ToWallet not found
+  MSG_CONSUMER_NOT_FOUND: Consumer not found
+  MSG_TARGET_CONSUMER_NOT_FOUND: Consumer to send not found
+  MSG_TARGET_WALLET_NOT_FOUND: Wallet to send not found
+  MSG_TRANSACTION_NOT_CREATED: Transaction not created
+  MSG_TRANSACTION_NOT_FOUND: Transaction not found
+  MSG_TRANSACTION_NOT_UPDATED: Transaction not updated
+  MSG_INVALID_REQUEST: Invalid Request
+  MSG_STATUS_INVALID: Invalid Status
+  MSG_SOURCE_TARGET_WALLET_SAME: source and target wallet cannot be same
+  MSG_PENDING_TRANSACTION_NOT_FOUND: No pending transaction found
+  
+  MSG_LOGIN_SUCCESSFUL: Welcome to ZARGA. You have Successfully logged on at
+  MSG_REGISTRATION_OTP: Your ZARGA 4-digit OTP number is XXXXX for Registration
+  MSG_REGISTRATION_SUCCESSFUL: Welcome to ZARGA. Your Registration was Successful and you can now Use the Application
+  MSG_CREDIT_SUCCESSFUL_TO_CONSUMER: Your Zarga Wallet has been credited with R XXX.XX by XXX
+  MSG_CREDIT_SUCCESSFUL_TO_AGENT: Your Zarga Wallet has been credited with R XXX.XX by agent XXX
+  MSG_DEBIT_SUCCESSFUL_CONSUMER: Your Zarga Wallet has been debited with R XXX.XX with reference XXXX
+  MSG_DEBIT_SUCCESSFUL_AGENT: Your Zarga Wallet has been debited with R XXX.XX to agent XXX with reference XXXX
+  PUSH_NOTIFICATION_TRANSACTION_TITLE: ZARGA Transaction
+  PUSH_NOTIFICATION_BODY_ZARGA_PIN_SET: Welcome to ZARGA. Your Registration was Successful and you can now Use the Application
+  PUSH_NOTIFICATION_TITLE_ZARGA_PIN_SET: SET Zarga PIN SUCCESS
+  PUSH_NOTIFICATION_CREATE_ACCOUNT_TITLE: Welcome to ZARGA
+
